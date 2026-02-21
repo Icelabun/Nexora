@@ -223,7 +223,7 @@ const AuthForm = () => {
       } else if (error.message && error.message.includes('Unable to connect')) {
         setError('Unable to connect to the server. Please ensure the backend server is running.');
       } else if (error.code === 'ECONNABORTED' || !error.response) {
-        setError('Connection timeout. Please check if the backend server is running on http://localhost:5001');
+        setError('Connection timeout. Please check if the backend server is running on https://studyssphere-backend.onrender.com');
       } else {
         const errorMessage = error.response?.data?.message || 'An error occurred during authentication';
         setError(errorMessage);

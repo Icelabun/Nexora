@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001';
+const API_URL = process.env.REACT_APP_API_URL || 'https://studyssphere-backend.onrender.com';
 const ADMIN_ACCESS_KEY = 'adminAccess';
 const ADMIN_ACCESS_GRANTED = 'granted';
 
