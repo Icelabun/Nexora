@@ -14,7 +14,6 @@ import ProfileBoard from './components/ProfileBoard';
 // Lazy load components
 const Home = lazy(() => import('./pages/Home'));
 const Teachers = lazy(() => import('./pages/Teachers'));
-const Profile = lazy(() => import('./components/pages/Profile'));
 const Dashboard = lazy(() => import('./components/pages/Dashboard'));
 const AuthForm = lazy(() => import('./components/auth/AuthForm'));
 const CharacterCreation = lazy(() => import('./components/auth/CharacterCreation'));
@@ -22,8 +21,24 @@ const Flashcards = lazy(() => import('./components/pages/Flashcards'));
 const Social = lazy(() => import('./components/pages/Social'));
 const AITutor = lazy(() => import('./components/pages/AITutor'));
 const StudyDungeon = lazy(() => import('./components/pages/StudyDungeon'));
+const StudyMaterials = lazy(() => import('./components/pages/StudyMaterials'));
+const UserAnalytics = lazy(() => import('./components/pages/Analytics'));
+const Achievements = lazy(() => import('./components/pages/Achievements'));
+const Forum = lazy(() => import('./components/pages/Forum'));
+const Quests = lazy(() => import('./components/pages/Quests'));
 const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
+const Timeline = lazy(() => import('./pages/Timeline'));
+const StudyGroups = lazy(() => import('./pages/StudyGroups'));
+const Chat = lazy(() => import('./pages/Chat'));
+const Settings = lazy(() => import('./pages/Settings'));
+const Help = lazy(() => import('./pages/Help'));
+const Careers = lazy(() => import('./pages/Careers'));
+const Blog = lazy(() => import('./pages/Blog'));
+const Privacy = lazy(() => import('./pages/Privacy'));
+const Terms = lazy(() => import('./pages/Terms'));
+const Cookies = lazy(() => import('./pages/Cookies'));
+const Accessibility = lazy(() => import('./pages/Accessibility'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 // Eager import to avoid ChunkLoadError (AdminDashboard has many deps; lazy chunk can fail to load)
 import AdminDashboard from './pages/AdminDashboard';
@@ -165,11 +180,205 @@ const App = () => {
         errorElement: <NotFound />,
       },
       {
+        path: "/study-materials",
+        element: (
+          <Suspense fallback={<LoadingFallback />}>
+            <PrivateRoute>
+              <Layout>
+                <StudyMaterials />
+              </Layout>
+            </PrivateRoute>
+          </Suspense>
+        ),
+        errorElement: <NotFound />,
+      },
+      {
+        path: "/analytics",
+        element: (
+          <Suspense fallback={<LoadingFallback />}>
+            <PrivateRoute>
+              <Layout>
+                <UserAnalytics />
+              </Layout>
+            </PrivateRoute>
+          </Suspense>
+        ),
+        errorElement: <NotFound />,
+      },
+      {
+        path: "/achievements",
+        element: (
+          <Suspense fallback={<LoadingFallback />}>
+            <PrivateRoute>
+              <Layout>
+                <Achievements />
+              </Layout>
+            </PrivateRoute>
+          </Suspense>
+        ),
+        errorElement: <NotFound />,
+      },
+      {
+        path: "/forum",
+        element: (
+          <Suspense fallback={<LoadingFallback />}>
+            <PrivateRoute>
+              <Layout>
+                <Forum />
+              </Layout>
+            </PrivateRoute>
+          </Suspense>
+        ),
+        errorElement: <NotFound />,
+      },
+      {
+        path: "/quests",
+        element: (
+          <Suspense fallback={<LoadingFallback />}>
+            <PrivateRoute>
+              <Layout>
+                <Quests />
+              </Layout>
+            </PrivateRoute>
+          </Suspense>
+        ),
+        errorElement: <NotFound />,
+      },
+      {
+        path: "/timeline",
+        element: (
+          <Suspense fallback={<LoadingFallback />}>
+            <PrivateRoute>
+              <Layout>
+                <Timeline />
+              </Layout>
+            </PrivateRoute>
+          </Suspense>
+        ),
+        errorElement: <NotFound />,
+      },
+      {
+        path: "/study-groups",
+        element: (
+          <Suspense fallback={<LoadingFallback />}>
+            <PrivateRoute>
+              <Layout>
+                <StudyGroups />
+              </Layout>
+            </PrivateRoute>
+          </Suspense>
+        ),
+        errorElement: <NotFound />,
+      },
+      {
+        path: "/chat",
+        element: (
+          <Suspense fallback={<LoadingFallback />}>
+            <PrivateRoute>
+              <Layout>
+                <Chat />
+              </Layout>
+            </PrivateRoute>
+          </Suspense>
+        ),
+        errorElement: <NotFound />,
+      },
+      {
+        path: "/settings",
+        element: (
+          <Suspense fallback={<LoadingFallback />}>
+            <PrivateRoute>
+              <Layout>
+                <Settings />
+              </Layout>
+            </PrivateRoute>
+          </Suspense>
+        ),
+        errorElement: <NotFound />,
+      },
+      {
+        path: "/help",
+        element: (
+          <Suspense fallback={<LoadingFallback />}>
+            <Layout>
+              <Help />
+            </Layout>
+          </Suspense>
+        ),
+        errorElement: <NotFound />,
+      },
+      {
         path: "/about",
         element: (
           <Suspense fallback={<LoadingFallback />}>
             <Layout>
               <About />
+            </Layout>
+          </Suspense>
+        ),
+        errorElement: <NotFound />,
+      },
+      {
+        path: "/careers",
+        element: (
+          <Suspense fallback={<LoadingFallback />}>
+            <Layout>
+              <Careers />
+            </Layout>
+          </Suspense>
+        ),
+        errorElement: <NotFound />,
+      },
+      {
+        path: "/blog",
+        element: (
+          <Suspense fallback={<LoadingFallback />}>
+            <Layout>
+              <Blog />
+            </Layout>
+          </Suspense>
+        ),
+        errorElement: <NotFound />,
+      },
+      {
+        path: "/privacy",
+        element: (
+          <Suspense fallback={<LoadingFallback />}>
+            <Layout>
+              <Privacy />
+            </Layout>
+          </Suspense>
+        ),
+        errorElement: <NotFound />,
+      },
+      {
+        path: "/terms",
+        element: (
+          <Suspense fallback={<LoadingFallback />}>
+            <Layout>
+              <Terms />
+            </Layout>
+          </Suspense>
+        ),
+        errorElement: <NotFound />,
+      },
+      {
+        path: "/cookies",
+        element: (
+          <Suspense fallback={<LoadingFallback />}>
+            <Layout>
+              <Cookies />
+            </Layout>
+          </Suspense>
+        ),
+        errorElement: <NotFound />,
+      },
+      {
+        path: "/accessibility",
+        element: (
+          <Suspense fallback={<LoadingFallback />}>
+            <Layout>
+              <Accessibility />
             </Layout>
           </Suspense>
         ),

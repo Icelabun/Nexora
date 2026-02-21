@@ -1,6 +1,6 @@
-const express = require('express');
-const moment = require('moment');
-const User = require('../models/User');
+import express from 'express';
+import moment from 'moment';
+import User from '../models/User.js';
 
 const router = express.Router();
 
@@ -24,7 +24,7 @@ const updateStreak = async (userId) => {
 };
 
 // Get user streak
-router.get('/streak/:userId', async (req, res) => {
+router.get('/:userId', async (req, res) => {
   try {
     const user = await User.findById(req.params.userId);
     if (!user) return res.status(404).json({ message: 'User not found' });
@@ -47,4 +47,4 @@ router.post('/update/:userId', async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;

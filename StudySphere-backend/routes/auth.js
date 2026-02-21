@@ -152,6 +152,11 @@ router.post("/login", async (req, res) => {
   }
 });
 
+// Logout Route (client-side token invalidation for JWT flows)
+router.post("/logout", (req, res) => {
+  res.json({ message: "Logout successful" });
+});
+
 // Get User Profile (Protected Route)
 router.get("/profile", async (req, res) => {
   try {

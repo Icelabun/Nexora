@@ -131,7 +131,7 @@ const ProfileBoard = () => {
         }
       }
 
-      const response = await axiosInstance.put('/api/user/profile', {
+      const response = await axiosInstance.put('/api/auth/profile', {
         username: formData.username,
         email: formData.email,
         currentPassword: formData.currentPassword,

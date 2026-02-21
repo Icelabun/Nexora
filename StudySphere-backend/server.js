@@ -4,6 +4,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import authRoutes from "./routes/auth.js";
 import adminRoutes from "./routes/admin.js";
+import streakRoutes from "./routes/streak.js";
 import { requestLogger } from "./middleware/logger.js";
 import fs from "fs";
 import path from "path";
@@ -75,6 +76,7 @@ app.get('/health', (req, res) => {
 
 app.use("/api/auth", authRoutes);
 app.use("/api/admin", adminRoutes);
+app.use("/api/streak", streakRoutes);
 
 // Start the Server
 const PORT = process.env.PORT || 5001;
