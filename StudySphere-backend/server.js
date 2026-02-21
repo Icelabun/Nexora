@@ -25,8 +25,23 @@ if (!fs.existsSync(logsDir)) {
 // Middleware
 app.use(express.json());
 app.use(requestLogger);
+const allowedOrigins = [
+  "https://studyssphere-frontend.onrender.com",
+  "http://localhost:3000",
+  "http://127.0.0.1:3000",
+];
+
 app.use(cors({
-  origin: ["https://studyssphere-frontend.onrender.com", "http://localhost:5001"], // Allow both frontend and backend origins
+  origin: (origin, callback) => {
+    // Allow non-browser clients/tools that don't send an Origin header
+    if (!origin) {
+      return callback(null, true);
+    }
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+    return callback(new Error("Not allowed by CORS"));
+  },
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization", "X-Admin-Password"],
   credentials: true,
