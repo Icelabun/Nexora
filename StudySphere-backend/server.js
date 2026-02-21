@@ -26,7 +26,7 @@ if (!fs.existsSync(logsDir)) {
 app.use(express.json());
 app.use(requestLogger);
 app.use(cors({
-  origin: ["http://localhost:3000", "http://localhost:5001"], // Allow both frontend and backend origins
+  origin: ["https://studyssphere-frontend.onrender.com", "http://localhost:5001"], // Allow both frontend and backend origins
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization", "X-Admin-Password"],
   credentials: true,
